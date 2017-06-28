@@ -155,14 +155,9 @@ static NSTimeInterval JPSimulatorHacksTimeout = 15.0f;
 
 + (BOOL)grantAccessToContactsForBundleIdentifier:(NSString *)bundleIdentifier
 {
-#if defined(__IPHONE_9_0) && __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_9_0
     return [self changeAccessToService:JPSimulatorHacksServiceContacts
                       bundleIdentifier:bundleIdentifier
                                allowed:YES];
-#else
-    NSLog(JPSimulatorHacksServiceContactsError);
-    return NO;
-#endif
 }
 
 + (BOOL)grantAccessToCamera
